@@ -1,0 +1,166 @@
+/*
+	A.	TABLE Styling
+	B.	SELECT MENU Styling
+	C.	GO TO TOP Button
+*/
+/*	
+	To Do:
+	i.		SHOW drop-down on HOVER.
+	ii.		ARROW icon being annoying.
+	iii.	ARROW UP/ DOWN icon.
+	iv.		? Convert all colours to RBGA? - Expect BG.
+	v.		MQs.
+	vi.		COUNTA/ SUMs
+*/
+
+html {
+	background-size: cover;
+	background: radial-gradient(lightgrey, smokegrey) no-repeat center center fixed;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	-webkit-background-size: cover;
+	/* background: url("bg.jpg") no-repeat center center fixed; */
+}
+
+/*
+	A.	TABLE
+Generic Table Styling, for Desktops/Laptops
+inspired by https://css-tricks.com/responsive-data-tables/
+*/
+table {
+	border-collapse: collapse;
+}
+
+td {
+	width: 130px;
+}
+/* Zebra striping */
+tr:nth-of-type(even) {
+	background: #eee;
+}
+th { 
+	background: #333;
+	color: white;
+	font-weight: bold;
+	padding: 8px 16px;
+}
+h2, th {
+    font-family: "Lucida Sans", sans-serif;
+}
+td, th {
+	border: 1px solid #ccc;
+	text-align: left;
+}
+
+.ampm {
+	background: #ccc;
+}
+
+td:hover {
+	background: #cbd6fd;
+}
+
+/*
+	B.	CUSTOM DROPDOWN
+inspired by https://codepen.io/sverrirs/pen/dXJLRa
+and https://www.w3schools.com/howto/howto_custom_select.asp
+*/
+.custom-dropdown {
+	position: relative;
+}
+
+.custom-dropdown select {
+	background-color: #1E90FF; /* DodgerBlue; */
+	/* border-radius: 3px; */
+	border: 0;
+	color: #fff;
+	cursor: pointer;
+	font-size: inherit;
+	margin: 0;
+	padding-right: 3em;	
+	padding: .5em;
+	text-indent: 0.01px;
+	text-overflow: '';
+	width: 100%;
+	/* Hiding the select arrow for firefox */
+	-moz-appearance: none;
+	/* Hiding the select arrow for chrome */
+	-webkit-appearance:none;
+	/* Hiding the select arrow default implementation */
+	appearance: none;
+}
+/* Hiding the select arrow for IE10 */
+.custom-dropdown select::-ms-expand {
+    display: none;
+}
+
+.custom-dropdown::before,
+.custom-dropdown::after {
+	content: "";
+	position: absolute;
+	/* pointer-events: none; Is this required? */
+	}
+
+/* Custom dropdown arrow */
+.custom-dropdown::after {
+	content: "\25BC";
+	font-size: .625em;
+	height: 1em;
+	line-height: 1;
+	margin-top: -.5em;
+	right: 1.2em;
+	top: 50%;
+}
+
+/*  Custom dropdown arrow cover */
+.custom-dropdown::before { 
+	background-color: rgba(0,0,0,.2);
+	border-radius: 0 3px 3px 0;
+	bottom: 0;
+	right: 0;
+	top: 0;
+	width: 2em;
+}
+
+.custom-dropdown:after {
+	color: rgba(0,0,0,.6);
+}
+
+.custom-dropdown select[disabled] {
+	color: rgba(0,0,0,.25);
+}
+
+/* /////////////////////// */
+
+.custom-dropdown select:hover {
+	background-color: rgba(41,128,185,.8);
+}
+
+
+
+/* ////////////////////////////// */
+
+/*
+	C.	GO TO TOP Button
+from https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
+*/
+
+#myBtn {
+    background-color: red; /* Set a background color */
+    border-radius: 10px; /* Rounded corners */
+    border: none; /* Remove borders */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    display: none; /* Hidden by default */
+    font-size: 18px; /* Increase font size */
+    outline: none; /* Remove outline */
+    padding: 15px; /* Some padding */
+    position: fixed; /* Fixed/sticky position */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+}
+
+#myBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+}

@@ -1,0 +1,116 @@
+/* 
+Generic Table Styling, for Desktops/Laptops
+inspired by https://css-tricks.com/responsive-data-tables/ 
+*/
+
+table {
+	border-collapse: collapse;
+}
+/* Zebra striping */
+tr:nth-of-type(even) {
+	background: #eee;
+}
+th { 
+	background: #333;
+	color: white;
+	font-weight: bold;
+	padding: 8px 16px;
+}
+h2, th {
+    font-family: "Lucida Sans", sans-serif;
+}
+td, th {
+	border: 1px solid #ccc;
+	text-align: left;
+}
+
+.ampm {
+	background: #ccc;
+}
+
+/* .custom-select:not(:valid) { */
+  /* color: #999; */
+/* } */
+
+/* Custom Select Menu
+inspired by https://www.w3schools.com/howto/howto_custom_select.asp
+and https://codepen.io/sverrirs/pen/dXJLRa 
+*/
+
+/* The container must be positioned relative: */
+.custom-select {
+	position: relative;
+	font-family: Arial;
+}
+/* .custom-select select { */
+	/* display: none !important; /*Hide original SELECT element */ */
+/* } */
+.select-selected {
+	background-color: DodgerBlue; /* OR maybe #2980b9; */
+}
+/* Style the arrow inside the select element: */
+.select-selected:after {
+	position: absolute;
+	content: "";
+	top: 14px;
+	right: 10px;
+	width: 0;
+	height: 0;
+	border: 6px solid transparent;
+	border-color: #fff transparent transparent transparent;
+}
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected .select-arrow-active:after {
+	border-color: transparent transparent #fff transparent;
+	top: 7px;
+}
+
+/* Style the items (options), including the selected item: */
+.select-items div, .select-selected {
+	color: #ffffff;
+	padding: 8px 16px;
+	border: 1px solid transparent;
+	border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+	cursor: pointer;
+	user-select: none;
+}
+/* style items (options): */
+.select-items {
+	position: absolute;
+	background-color: DodgerBlue;
+	top: 100%;
+	left: 0;
+	right: 0;
+	z-index: 99;
+}
+/* Hide the items when the select box is closed: */
+.select-hide {
+	display: none;
+}
+.select-items div:hover, .same-as-selected {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+/*
+GO TO TOP Button
+from https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
+*/
+
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: red; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+}
+
+#myBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+}
